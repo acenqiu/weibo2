@@ -15,6 +15,7 @@ Config your api_key, api_secret and redrect_uri somewhere like development.rb.
   Weibo2::Config.redirect_uri = "http://www.example.com/callback"
 
 Ok, now you are ready to enjoy it. Sina Weibo has provided several ways to get your access token, and you can easily get it using Weibo2.
+
 1.The Authorization Code strategy with response_type set to code
   
   # get authorize_url
@@ -43,7 +44,9 @@ Ok, now you are ready to enjoy it. Sina Weibo has provided several ways to get y
   client.password.get_token('username', 'password')
   
 4.Signed Request strategy
-  Follow this link to read more about this strategy.{站内应用开发指南}[http://open.weibo.com/wiki/%E7%AB%99%E5%86%85%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97]
+
+Follow this link to read more about this strategy.{站内应用开发指南}[http://open.weibo.com/wiki/%E7%AB%99%E5%86%85%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97]
+
   
   # get token using signed_request
   client = Weibo2::Client.from_signed_request("signed_request-posted-by-weibo")
@@ -53,7 +56,9 @@ Ok, now you are ready to enjoy it. Sina Weibo has provided several ways to get y
   # => {"user"=>{"country"=>"cn", "locale"=>""}, "algorithm"=>"HMAC-SHA256", "issued_at"=>1320298983, "expires"=>1320385383, "oauth_token"=>"0ca59d99f92436d65ae23115604a3185", "user_id"=>1234567890}
 
 5.Refresh your token
-  Note that you could refresh your token only when you can get the refresh_token.
+
+Note that you could refresh your token only when you can get the refresh_token.
+
   
   client.refresh!
   
@@ -69,6 +74,13 @@ If you are authorized, then you can do whatever you want now.
   
   response.parsed
   # => {"uid"=>1234567890}
+
+
+== API
+
+You can find them in /lib/weibo2/interface/.Note that all methods follow the patten of {resource}.{the_rest_path_joined_by_underline}(required_params, opts={}).
+So {/statuses/hot/comments_weekly}[http://open.weibo.com/wiki/2/statuses/hot/comments_weekly] will turn to statuses.hot_comments_weekly(opts={}) and
+{/friendships/friends/in_common}[http://open.weibo.com/wiki/2/friendships/friends/in_common] will turn to friendships.friends_in_common(uid, opts={}).
   
 == Copyright
 
