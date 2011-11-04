@@ -78,9 +78,12 @@ If you are authorized, then you can do whatever you want now.
 
 == API
 
-You can find them in /lib/weibo2/interface/.Note that all methods follow the patten of {resource}.{the_rest_path_joined_by_underline}(required_params, opts={}).
-So {/statuses/hot/comments_weekly}[http://open.weibo.com/wiki/2/statuses/hot/comments_weekly] will turn to statuses.hot_comments_weekly(opts={}) and
-{/friendships/friends/in_common}[http://open.weibo.com/wiki/2/friendships/friends/in_common] will turn to friendships.friends_in_common(uid, opts={}).
+You can find them in /lib/weibo2/interface/.Note that all methods follow the patten of
+
+   {resource}.{the_rest_path_joined_by_underline}(required_params, opts={}).
+   
+So {/statuses/hot/comments_weekly}[http://open.weibo.com/wiki/2/statuses/hot/comments_weekly] will turn to statuses.hot_comments_weekly(opts={}).
+And {/friendships/friends/in_common}[http://open.weibo.com/wiki/2/friendships/friends/in_common] will turn to friendships.friends_in_common(uid, opts={}).
   
 == Copyright
 
