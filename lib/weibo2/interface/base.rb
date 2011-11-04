@@ -1,5 +1,7 @@
 module Weibo2
   module Interface
+  
+    # The Base class of API
     class Base
       def initialize(client)
         @client = client

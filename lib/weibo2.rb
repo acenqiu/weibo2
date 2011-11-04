@@ -1,4 +1,3 @@
-require 'weibo2/util'
 require 'weibo2/client'
 require 'weibo2/config'
 require 'weibo2/error'

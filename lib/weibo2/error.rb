@@ -1,5 +1,6 @@
 module Weibo2
   class Error < OAuth2::Error
+  
     def initialize(response)
       response.error = self
       @response = response
