@@ -1,6 +1,8 @@
 require 'weibo2/client'
 require 'weibo2/config'
 require 'weibo2/error'
+require 'weibo2/strategy/auth_code.rb'
+require 'weibo2/strategy/signed_request.rb'
 require 'weibo2/interface/base'
 require 'weibo2/interface/account'
 require 'weibo2/interface/comments'

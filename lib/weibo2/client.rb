@@ -62,8 +62,8 @@ module Weibo2
       @redirect_uri = Weibo2::Config.redirect_uri
       
       options = {:site          => "https://api.weibo.com/2/",
-                 :authorize_url => "oauth2/authorize",
-                 :token_url     => "oauth2/access_token",
+                 :authorize_url => "/oauth2/authorize",
+                 :token_url     => "/oauth2/access_token",
                  :raise_errors  => false,
                  :ssl           => {:verify => false}}.merge(opts)
           
@@ -102,6 +102,13 @@ module Weibo2
       @token = OAuth2::AccessToken.new(self, access_token, opts)
     end
     
+    # Refreshes the current Access Token
+    #
+    # @return [AccessToken] a new AccessToken
+    # @note options should be carried over to the new AccessToken
+    def refresh!(params={})
+      @token = token.refresh!(params)
+    end
    
     #
     # Strategies
